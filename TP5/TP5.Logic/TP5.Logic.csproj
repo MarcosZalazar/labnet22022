@@ -65,6 +65,10 @@
       <Project>{53adccbd-1c65-4b5e-9f6e-cff3c3ff87d1}</Project>
       <Name>TP5.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TP5.Entities\TP5.Entities.csproj">
+      <Project>{7e64ec6d-eef4-46bf-8ea4-b90ffe507356}</Project>
+      <Name>TP5.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

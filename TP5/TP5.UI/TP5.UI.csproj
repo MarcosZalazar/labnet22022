@@ -87,5 +87,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TP5.Logic\TP5.Logic.csproj">
+      <Project>{08f7e39f-25a5-45a2-940b-beee02a835e7}</Project>
+      <Name>TP5.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

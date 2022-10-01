@@ -3,32 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TP5.Entities;
 
 namespace TP5.Logic
 {
-    public class CustomersLogic
+    public class CustomersLogic : BaseLogic<Customers>
     {
-        public void Query1() 
-        { 
-            
+        //IQueryable<Customers> customers;
+
+        public string ReturnACustomer() 
+        {
+            var customer= context.Customers.Find("CHOPS");
+            string query = customer.ToString();
+
+            return query;
         }
-        public void Query4()
+
+        public static void ReturnAllCustomersFromRegionWA()
         {
 
         }
-        public void Query6()
+
+        public static void ReturnAllCustomers()
         {
 
         }
-        public void Query7()
+        public static void ReturnAllCustomersFromWAWithOrderDateGreaterThanYear1997()
         {
 
         }
-        public void Query8()
-        {
 
-        }
-        public void Query13()
+        public static void ReturnFirstThreeCustomersFromWA()
         {
 
         }

@@ -5,6 +5,7 @@ namespace TP5.Entities
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Text;
 
     public partial class Customers
     {
@@ -55,5 +56,18 @@ namespace TP5.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CustomerDemographics> CustomerDemographics { get; set; }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Id del cliente: {this.CustomerID}");
+            sb.AppendLine($"Nombre de la compañía:{this.CompanyName}");
+            sb.AppendLine($"Dirección:{this.Address}");
+            sb.AppendLine($"Ciudad:{this.City}");
+            sb.AppendLine($"País:{this.Country}");
+
+            return sb.ToString();
+        }
     }
 }

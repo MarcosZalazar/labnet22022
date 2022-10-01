@@ -3,30 +3,64 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TP5.Entities;
 
 namespace TP5.Logic
 {
-    public class ProductsLogic
+    public class ProductsLogic : BaseLogic<Customers>
     {
-        public void Query2()
+        //IQueryable<Products> products;
+
+        public string ReturnAnOutOfStockList()
         {
+            StringBuilder message = new StringBuilder();
+            var query = context.Products.Where(p => p.UnitsInStock == 0).Select(p => p);
+
+            foreach (var item in query)
+            {
+                message.AppendLine($"Id de producto: {item.ProductID}");
+                message.AppendLine($"Id de producto: {item.ProductName}");
+                message.AppendLine($"Id de producto: {item.UnitsInStock}{Environment.NewLine}");
+            }
+
+            return message.ToString();
         }
-        public void Query3()
+
+        public string ReturnAStockListWithPricesAbove3Dolars()
         {
+            StringBuilder message = new StringBuilder();
+            var query = context.Products.Where(p => p.UnitsInStock == 0).Select(p => p);
+
+            foreach (var item in query)
+            {
+                message.AppendLine($"Id de producto: {item.ProductID}");
+                message.AppendLine($"Id de producto: {item.ProductName}");
+                message.AppendLine($"Id de producto: {item.UnitsInStock}{Environment.NewLine}");
+            }
+
+            return message.ToString();
         }
-        public void Query5()
+
+        public static void ReturnFirstItemOrNullWithId789()
         {
 
         }
-        public void Query9()
+        public static void ReturnProductsListOrderedByName()
         {
 
         }
-        public void Query10()
+
+        public static void ReturnProductsListOrderedByUnitsInStockDesc()
         {
 
         }
-        public void Query12()
+
+        public static void ReturnProductsCategories()
+        {
+
+        }
+
+        public static void ReturnFirstProductFromAProductsList()
         {
 
         }

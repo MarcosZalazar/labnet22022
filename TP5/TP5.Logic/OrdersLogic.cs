@@ -8,6 +8,9 @@ namespace TP5.Logic
 {
     public class OrdersLogic
     {
+        public static void ReturnNumberOfOrdersPerCustomer()
+        {
 
+        }
     }
 }
