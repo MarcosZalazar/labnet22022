@@ -48,8 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseLogic.cs" />
     <Compile Include="CategoriesLogic.cs" />
     <Compile Include="CustomersLogic.cs" />
+    <Compile Include="ILogic.cs" />
     <Compile Include="OrdersLogic.cs" />
     <Compile Include="ProductsLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +59,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TP5.Data\TP5.Data.csproj">
+      <Project>{53adccbd-1c65-4b5e-9f6e-cff3c3ff87d1}</Project>
+      <Name>TP5.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

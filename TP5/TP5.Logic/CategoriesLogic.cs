@@ -8,5 +8,9 @@ namespace TP5.Logic
 {
     public class CategoriesLogic
     {
+        public void Query11()
+        {
+
+        }
     }
 }

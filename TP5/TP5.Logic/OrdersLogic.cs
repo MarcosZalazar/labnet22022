@@ -8,5 +8,6 @@ namespace TP5.Logic
 {
     public class OrdersLogic
     {
+
     }
 }

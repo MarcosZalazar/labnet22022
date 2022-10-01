@@ -8,5 +8,27 @@ namespace TP5.Logic
 {
     public class ProductsLogic
     {
+        public void Query2()
+        {
+        }
+        public void Query3()
+        {
+        }
+        public void Query5()
+        {
+
+        }
+        public void Query9()
+        {
+
+        }
+        public void Query10()
+        {
+
+        }
+        public void Query12()
+        {
+
+        }
     }
 }
