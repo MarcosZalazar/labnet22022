@@ -35,57 +35,57 @@ namespace TP5.UI
 
         private void btnQuery3_Click(object sender, EventArgs e)
         {
-            this.rtbReport.Text = this.productsLogic.ReturnAStockListWithPricesAbove3Dolars();
+            this.rtbReport.Text = this.productsLogic.ReturnAStockListWithPricesAbove3Dollars();
         }
 
         private void btnQuery4_Click(object sender, EventArgs e)
         {
-            CustomersLogic.ReturnAllCustomersFromRegionWA();
+            this.rtbReport.Text = this.customersLogic.ReturnAllCustomersFromRegionWA();
         }
 
         private void btnQuery5_Click(object sender, EventArgs e)
         {
-            ProductsLogic.ReturnFirstItemOrNullWithId789();
+            this.rtbReport.Text = this.productsLogic.ReturnFirstItemOrNullWithId789();
         }
 
         private void btnQuery6_Click(object sender, EventArgs e)
         {
-            CustomersLogic.ReturnAllCustomers();
+            this.rtbReport.Text = this.customersLogic.ReturnAllCustomers();
         }
 
         private void btnQuery7_Click(object sender, EventArgs e)
         {
-            CustomersLogic.ReturnAllCustomersFromWAWithOrderDateGreaterThanYear1997();
+            this.rtbReport.Text = this.customersLogic.ReturnAllCustomersFromWAWithOrderDateGreaterThanYear1997();
         }
 
         private void btnQuery8_Click(object sender, EventArgs e)
         {
-            CustomersLogic.ReturnFirstThreeCustomersFromWA();
+            this.rtbReport.Text = this.customersLogic.ReturnFirstThreeCustomersFromWA();
         }
 
         private void btnQuery9_Click(object sender, EventArgs e)
         {
-            ProductsLogic.ReturnProductsListOrderedByName();
+            this.rtbReport.Text = this.productsLogic.ReturnProductsListOrderedByName();
         }
 
         private void btnQuery10_Click(object sender, EventArgs e)
         {
-            ProductsLogic.ReturnProductsListOrderedByUnitsInStockDesc();
+            this.rtbReport.Text = this.productsLogic.ReturnProductsListOrderedByUnitsInStockDesc();
         }
 
         private void btnQuery11_Click(object sender, EventArgs e)
         {
-            ProductsLogic.ReturnProductsCategories();
+            this.rtbReport.Text = this.productsLogic.ReturnProductsCategories();
         }
 
         private void btnQuery12_Click(object sender, EventArgs e)
         {
-            ProductsLogic.ReturnFirstProductFromAProductsList();
+            this.rtbReport.Text = this.productsLogic.ReturnFirstProductFromAProductsList();
         }
 
         private void btnQuery13_Click(object sender, EventArgs e)
         {
-            OrdersLogic.ReturnNumberOfOrdersPerCustomer();
+            this.rtbReport.Text = this.customersLogic.ReturnNumberOfOrdersPerCustomer();
         }
     }
 }

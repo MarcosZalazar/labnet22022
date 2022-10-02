@@ -88,6 +88,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TP5.Entities\TP5.Entities.csproj">
+      <Project>{7E64EC6D-EEF4-46BF-8EA4-B90FFE507356}</Project>
+      <Name>TP5.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TP5.Logic\TP5.Logic.csproj">
       <Project>{08f7e39f-25a5-45a2-940b-beee02a835e7}</Project>
       <Name>TP5.Logic</Name>
