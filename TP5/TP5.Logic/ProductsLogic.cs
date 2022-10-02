@@ -33,6 +33,7 @@ namespace TP5.Logic
             {
                 message.AppendLine($"Id de producto: {item.ProductID}");
                 message.AppendLine($"Nombre del producto: {item.ProductName}");
+                message.AppendLine($"Precio unitario: {item.UnitPrice}");
                 message.AppendLine($"Unidades en stock: {item.UnitsInStock}{Environment.NewLine}");
             }
 

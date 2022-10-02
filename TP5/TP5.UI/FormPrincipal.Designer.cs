@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.grbQuerys = new System.Windows.Forms.GroupBox();
+            this.btnQuery13 = new System.Windows.Forms.Button();
+            this.btnQuery12 = new System.Windows.Forms.Button();
+            this.btnQuery11 = new System.Windows.Forms.Button();
             this.btnQuery10 = new System.Windows.Forms.Button();
             this.btnQuery9 = new System.Windows.Forms.Button();
             this.btnQuery8 = new System.Windows.Forms.Button();
@@ -40,9 +43,6 @@
             this.btnQuery2 = new System.Windows.Forms.Button();
             this.btnQuery1 = new System.Windows.Forms.Button();
             this.rtbReport = new System.Windows.Forms.RichTextBox();
-            this.btnQuery11 = new System.Windows.Forms.Button();
-            this.btnQuery12 = new System.Windows.Forms.Button();
-            this.btnQuery13 = new System.Windows.Forms.Button();
             this.grbQuerys.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,36 @@
             this.grbQuerys.TabIndex = 0;
             this.grbQuerys.TabStop = false;
             this.grbQuerys.Text = "Consultas";
+            // 
+            // btnQuery13
+            // 
+            this.btnQuery13.Location = new System.Drawing.Point(29, 379);
+            this.btnQuery13.Name = "btnQuery13";
+            this.btnQuery13.Size = new System.Drawing.Size(75, 23);
+            this.btnQuery13.TabIndex = 12;
+            this.btnQuery13.Text = "Query 13";
+            this.btnQuery13.UseVisualStyleBackColor = true;
+            this.btnQuery13.Click += new System.EventHandler(this.btnQuery13_Click);
+            // 
+            // btnQuery12
+            // 
+            this.btnQuery12.Location = new System.Drawing.Point(29, 350);
+            this.btnQuery12.Name = "btnQuery12";
+            this.btnQuery12.Size = new System.Drawing.Size(75, 23);
+            this.btnQuery12.TabIndex = 11;
+            this.btnQuery12.Text = "Query 12";
+            this.btnQuery12.UseVisualStyleBackColor = true;
+            this.btnQuery12.Click += new System.EventHandler(this.btnQuery12_Click);
+            // 
+            // btnQuery11
+            // 
+            this.btnQuery11.Location = new System.Drawing.Point(29, 321);
+            this.btnQuery11.Name = "btnQuery11";
+            this.btnQuery11.Size = new System.Drawing.Size(75, 23);
+            this.btnQuery11.TabIndex = 10;
+            this.btnQuery11.Text = "Query 11";
+            this.btnQuery11.UseVisualStyleBackColor = true;
+            this.btnQuery11.Click += new System.EventHandler(this.btnQuery11_Click);
             // 
             // btnQuery10
             // 
@@ -172,49 +202,25 @@
             // 
             this.rtbReport.Location = new System.Drawing.Point(198, 29);
             this.rtbReport.Name = "rtbReport";
-            this.rtbReport.Size = new System.Drawing.Size(297, 409);
+            this.rtbReport.Size = new System.Drawing.Size(404, 409);
             this.rtbReport.TabIndex = 1;
             this.rtbReport.Text = "";
-            // 
-            // btnQuery11
-            // 
-            this.btnQuery11.Location = new System.Drawing.Point(29, 321);
-            this.btnQuery11.Name = "btnQuery11";
-            this.btnQuery11.Size = new System.Drawing.Size(75, 23);
-            this.btnQuery11.TabIndex = 10;
-            this.btnQuery11.Text = "Query 11";
-            this.btnQuery11.UseVisualStyleBackColor = true;
-            this.btnQuery11.Click += new System.EventHandler(this.btnQuery11_Click);
-            // 
-            // btnQuery12
-            // 
-            this.btnQuery12.Location = new System.Drawing.Point(29, 350);
-            this.btnQuery12.Name = "btnQuery12";
-            this.btnQuery12.Size = new System.Drawing.Size(75, 23);
-            this.btnQuery12.TabIndex = 11;
-            this.btnQuery12.Text = "Query 12";
-            this.btnQuery12.UseVisualStyleBackColor = true;
-            this.btnQuery12.Click += new System.EventHandler(this.btnQuery12_Click);
-            // 
-            // btnQuery13
-            // 
-            this.btnQuery13.Location = new System.Drawing.Point(29, 379);
-            this.btnQuery13.Name = "btnQuery13";
-            this.btnQuery13.Size = new System.Drawing.Size(75, 23);
-            this.btnQuery13.TabIndex = 12;
-            this.btnQuery13.Text = "Query 13";
-            this.btnQuery13.UseVisualStyleBackColor = true;
-            this.btnQuery13.Click += new System.EventHandler(this.btnQuery13_Click);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 450);
+            this.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.ClientSize = new System.Drawing.Size(624, 450);
             this.Controls.Add(this.rtbReport);
             this.Controls.Add(this.grbQuerys);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario principal";
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.grbQuerys.ResumeLayout(false);
             this.ResumeLayout(false);
 

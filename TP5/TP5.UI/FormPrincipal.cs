@@ -22,6 +22,29 @@ namespace TP5.UI
             this.customersLogic = new CustomersLogic();
             this.productsLogic = new ProductsLogic();
         }
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            var queryHelpMessage = new ToolTip();
+
+            queryHelpMessage.SetToolTip(this.btnQuery1, " Query para devolver objeto customer");
+            queryHelpMessage.SetToolTip(this.btnQuery2, " Query para devolver todos los productos sin stock");
+            queryHelpMessage.SetToolTip(this.btnQuery3, " Query para devolver todos los productos que tienen " +
+                                                          "stock y que cuestan más de 3 por unidad");
+            queryHelpMessage.SetToolTip(this.btnQuery4, " Query para devolver todos los customers de la Región WA");
+            queryHelpMessage.SetToolTip(this.btnQuery5, " Query para devolver el primer elemento o nulo de una " +
+                                                        " lista de productos donde el ID de producto sea igual a 789");
+            queryHelpMessage.SetToolTip(this.btnQuery6, " Query para devolver los nombre de los Customers. Mostrarlos " +
+                                                        " en Mayuscula y en Minuscula");
+            queryHelpMessage.SetToolTip(this.btnQuery7, " Query para devolver Join entre Customers y Orders donde los customers " +
+                                                        " sean de la Región WA y la fecha de orden sea mayor a 1 / 1 / 1997");
+            queryHelpMessage.SetToolTip(this.btnQuery8, " Query para devolver los primeros 3 Customers de la  Región WA");
+            queryHelpMessage.SetToolTip(this.btnQuery9, " Query para devolver lista de productos ordenados por nombre");
+            queryHelpMessage.SetToolTip(this.btnQuery10," Query para devolver lista de productos ordenados por unit in " +
+                                                        " stock de mayor a menor");
+            queryHelpMessage.SetToolTip(this.btnQuery11," Query para devolver las distintas categorías asociadas a los productos");
+            queryHelpMessage.SetToolTip(this.btnQuery12, " Query para devolver el primer elemento de una lista de productos");
+            queryHelpMessage.SetToolTip(this.btnQuery13, " Query para devolver los customer con la cantidad de ordenes asociadas");
+        }
 
         private void btnQuery1_Click(object sender, EventArgs e)
         {
