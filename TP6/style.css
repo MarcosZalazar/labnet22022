@@ -1,0 +1,66 @@
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+  }
+  
+    body {
+    background-image: url('Fondo del formulario.jpg');
+  }
+
+  h1{
+    text-align: center;
+    margin-bottom:10px;
+    font-size: 30px
+  }
+
+  h2{
+    text-align: center;
+    font-size: 20px
+  }
+
+  .claseFormulario {
+    background: #5a6979;
+    padding: 25px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-family: 'Helvetica';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+  }
+  
+  .claseTexbox {
+    width: 80%;
+    padding: 3px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'Helvetica';
+    color: black;
+  }
+
+  .claseBotones {
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 10px 0;
+  }
+
+  div
+  {
+    text-align: center;
+  }
+
+  button
+  { 
+    width: 400px;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+  }
