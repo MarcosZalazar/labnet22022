@@ -6,11 +6,13 @@
 
 <!DOCTYPE html>
 
-<h1>Vista para Insertar</h1>
-
+<h1>Vista para Agregar</h1>
+    
+    
 @using (Html.BeginForm("Insert", "Categories", FormMethod.Post))
 {
-    <label>Description: </label> @Html.TextBoxFor(c => c.Description)
+    <label>Nombre: </label> @Html.TextBoxFor(c => c.CategoryName)<br> 
+    <label>Descripción: </label> @Html.TextBoxFor(c => c.Description)<br> 
     <input type="submit" class="btn btn-success" value="Insertar" />
 }
-
+    

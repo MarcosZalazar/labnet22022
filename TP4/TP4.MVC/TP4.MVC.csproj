@@ -176,7 +176,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shippers\Index.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
-    <Content Include="Views\Categories\InsertUpdate.cshtml" />
+    <Content Include="Views\Categories\Insert.cshtml" />
     <Content Include="Views\Error\View.cshtml" />
   </ItemGroup>
   <ItemGroup>

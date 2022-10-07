@@ -22,13 +22,14 @@ namespace TP4.MVC.Controllers
             List<CategoriesView> categoriesViews = listOfCategories.Select(s => new CategoriesView
             {
                 Id = s.CategoryID,
+                CategoryName = s.CategoryName,
                 Description = s.Description,
             }).ToList();    
 
             return View(categoriesViews);
         }
 
-        public ActionResult Insert() 
+        public ActionResult Insert()
         {
             return View();
         }
@@ -38,7 +39,12 @@ namespace TP4.MVC.Controllers
         {
             try
             {
-                Categories categoryEntity = new Categories { CategoryName=categoriesView.CategoryName};
+                Categories categoryEntity = new Categories
+                {
+                    CategoryName = categoriesView.CategoryName,
+                    Description = categoriesView.Description
+                };
+
                 categoriesLogic.Add(categoryEntity);
                 return RedirectToAction("Index");
             }
@@ -50,8 +56,16 @@ namespace TP4.MVC.Controllers
 
         public ActionResult Delete(int id)
         {
-            categoriesLogic.Delete(id);
-            return RedirectToAction("Index");
+            try 
+            {
+                categoriesLogic.Delete(id);
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Error");
+            }
         }
+
     }
 }
