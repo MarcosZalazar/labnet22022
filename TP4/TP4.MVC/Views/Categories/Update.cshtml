@@ -1,0 +1,27 @@
+﻿@model TP4.MVC.Models.CategoriesView
+
+@{
+    ViewBag.Title = "Categories Page for UPDATE";
+}
+
+<!DOCTYPE html>
+
+<h1>Vista para Agregar</h1>
+
+@using (Html.BeginForm("Update", "Categories", FormMethod.Post))
+{
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div>
+        <label>Nombre: </label> @Html.TextBoxFor(c => c.CategoryName, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.CategoryName, null, new { @class = "text-danger" })<br>
+    </div>
+    <div>
+        @Html.LabelFor(c => c.Description)<br>
+        @Html.TextBoxFor(c => c.Description)<br>
+    </div>
+    <div>
+        <br><input type="submit" class="btn btn-success" value="Modficar" />
+    </div>
+}

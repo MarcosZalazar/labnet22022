@@ -178,6 +178,7 @@
     <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Categories\Insert.cshtml" />
     <Content Include="Views\Error\View.cshtml" />
+    <Content Include="Views\Categories\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

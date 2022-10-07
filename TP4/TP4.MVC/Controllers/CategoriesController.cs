@@ -59,11 +59,59 @@ namespace TP4.MVC.Controllers
             }
         }
 
+        public ActionResult Update(int id)
+        {
+            try
+            {
+                CategoriesLogic categoriesLogic = new CategoriesLogic();
+                var categoryEntity = categoriesLogic.GetOne(id);
+                CategoriesView categoriesViews = new CategoriesView()
+                {
+                    Id = categoryEntity.CategoryID, 
+                    CategoryName = categoryEntity.CategoryName,
+                    Description = categoryEntity.Description,
+                };
+
+                return View(categoriesViews);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Error");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Update(CategoriesView categoriesView)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Categories categoryEntity = new Categories
+                    {
+                        CategoryID = categoriesView.Id,
+                        CategoryName = categoriesView.CategoryName,
+                        Description = categoriesView.Description
+                    };
+ 
+                    categoriesLogic.Update(categoryEntity);
+                }
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Error");
+            }
+        }
+
         public ActionResult Delete(int id)
         {
             try 
             {
-                categoriesLogic.Delete(id);
+                if (ModelState.IsValid)
+                {
+                    categoriesLogic.Delete(id);
+                }
                 return RedirectToAction("Index");
             }
             catch (Exception)
