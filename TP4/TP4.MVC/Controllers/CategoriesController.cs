@@ -39,14 +39,19 @@ namespace TP4.MVC.Controllers
         {
             try
             {
-                Categories categoryEntity = new Categories
+                if (ModelState.IsValid) 
                 {
-                    CategoryName = categoriesView.CategoryName,
-                    Description = categoriesView.Description
-                };
+                    Categories categoryEntity = new Categories
+                    {
+                        CategoryName = categoriesView.CategoryName,
+                        Description = categoriesView.Description
+                    };
 
-                categoriesLogic.Add(categoryEntity);
-                return RedirectToAction("Index");
+                    categoriesLogic.Add(categoryEntity);
+                    return RedirectToAction("Index");
+
+                }
+                return View(categoriesView);
             }
             catch (Exception) 
             {
