@@ -1,0 +1,16 @@
+﻿@model TP4.MVC.Models.CategoriesView
+
+@{
+    ViewBag.Title = "Categories Page";
+}
+
+<!DOCTYPE html>
+
+<h1>Vista para Insertar</h1>
+
+@using (Html.BeginForm("Insert", "Categories", FormMethod.Post))
+{
+    <label>Description: </label> @Html.TextBoxFor(c => c.Description)
+    <input type="submit" class="btn btn-success" value="Insertar" />
+}
+

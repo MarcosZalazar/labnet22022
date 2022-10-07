@@ -1,0 +1,46 @@
+﻿@model List<TP4.MVC.Models.CategoriesView>
+
+@{
+    ViewBag.Title = "Categories Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h1>HOLA SOY EL INDEX DE CATEGORIES</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var category in Model)
+                {
+                <tr>
+                    <th scope="row">@category.Id</th>
+                    <td>@category.Description</td>
+                    <td>@Html.ActionLink("Modificar categoria", "Update")</td>
+                    <td>@Html.ActionLink("Borrar", "Delete", new { id = category.Id }, new { onclick = "return confirm('¿Esta seguro de que desea borrar la categoria?')" })</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+        <div>
+            @Html.ActionLink("Insertar nueva categoria", "Insert")
+        </div>
+        <script>
+
+        </script>
+    </div>
+</body>
+</html>
