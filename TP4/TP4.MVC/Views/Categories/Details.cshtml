@@ -1,0 +1,24 @@
+﻿@model TP4.MVC.Models.CategoriesView
+
+@{
+    ViewBag.Title = "Categories Page for UPDATE";
+}
+
+<!DOCTYPE html>
+
+<h1>Vista de detalles</h1>
+
+@using (Html.BeginForm("Details", "Categories", FormMethod.Post))
+{
+    <div>
+        <label>Id: </label><br>@Html.TextBoxFor(c => c.Id, new { @readonly = "readonly" })<br>
+    </div>
+    <div>
+
+        <label>Nombre: </label> <br>@Html.TextBoxFor(c =>c.CategoryName, new { @readonly = "readonly" })<br>
+    </div>
+    <div>
+            @Html.LabelFor(c => c.Description)
+        <br>@Html.TextBoxFor(c => c.Description, new { @readonly = "readonly" })<br>
+    </div>
+    }

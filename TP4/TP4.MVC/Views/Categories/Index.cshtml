@@ -17,12 +17,14 @@
         <div class="btn btn-primary">
             @Html.ActionLink("Agregar", "Insert")
         </div>
+        <div class="btn btn-primary">
+            @Html.ActionLink("Agregar", "InsertUpdate", "Categories")
+        </div>
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Descripción</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                 </tr>
@@ -30,13 +32,13 @@
             <tbody>
                 @foreach (var category in Model)
                 {
-                    <tr>
-                        <th scope="row">@category.Id</th>
-                        <td>@category.CategoryName</td>
-                        <td>@category.Description</td>
-                        <td class="btn btn-default">@Html.ActionLink("Modificar", "Update", new { id = category.Id })</td>
-                        <td class="btn btn-danger">@Html.ActionLink("Borrar", "Delete", new { id = category.Id }, new { onclick = "return confirm('¿Esta seguro de que desea borrar la categoria?')" })</td>
-                    </tr>
+                <tr>
+                    <th scope="row">@category.Id</th>
+                    <td>@category.CategoryName</td>
+                    <td class="btn btn-default">@Html.ActionLink("Modificar", "InsertUpdate", new { id = category.Id })</td>
+                    <td class="btn btn-danger">@Html.ActionLink("Borrar", "Delete", new { id = category.Id }, new { onclick = "return confirm('¿Esta seguro de que desea borrar la categoria?')" })</td>
+                    <td class="btn btn-info">@Html.ActionLink("Detalles", "Details", new { id = category.Id })</td>
+                </tr>
                 }
             </tbody>
         </table>

@@ -104,6 +104,72 @@ namespace TP4.MVC.Controllers
             }
         }
 
+        public ActionResult InsertUpdate(int id=0)
+        {
+            try
+            {
+                if (id>0)
+                {
+                    CategoriesLogic categoriesLogic = new CategoriesLogic();
+                    var categoryEntity = categoriesLogic.GetOne(id);
+                    CategoriesView categoriesViews = new CategoriesView()
+                    {
+                        Id = categoryEntity.CategoryID,
+                        CategoryName = categoryEntity.CategoryName,
+                        Description = categoryEntity.Description,
+                    };
+
+                    return View(categoriesViews);
+                }
+                else 
+                {
+                    return View();
+                }
+
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Error");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult InsertUpdate(CategoriesView categoriesView, int id = 0)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (id >0 )
+                    {
+                        Categories categoryEntity = new Categories
+                        {
+                            CategoryID = categoriesView.Id,
+                            CategoryName = categoriesView.CategoryName,
+                            Description = categoriesView.Description
+                        };
+
+                        categoriesLogic.Update(categoryEntity);
+                    }
+                    else 
+                    {
+                        Categories categoryEntity = new Categories
+                        {
+                            CategoryName = categoriesView.CategoryName,
+                            Description = categoriesView.Description
+                        };
+
+                        categoriesLogic.Add(categoryEntity);
+                    }
+                }
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Error");
+            }
+        }
+
         public ActionResult Delete(int id)
         {
             try 
@@ -120,5 +186,24 @@ namespace TP4.MVC.Controllers
             }
         }
 
+        public ActionResult Details(int id=0)
+        {
+            try
+            {
+                Categories category = this.categoriesLogic.GetOne(id);
+                CategoriesView categoryView = new CategoriesView()
+                {
+                    Id = category.CategoryID,
+                    CategoryName = category.CategoryName,
+                    Description = category.Description,
+                };
+
+                return View(categoryView);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Error");
+            }
+        }
     }
 }
