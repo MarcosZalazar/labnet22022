@@ -15,7 +15,7 @@ namespace TP4.MVC.Models
         [StringLength(15)]
         public string CategoryName { get; set; }
 
-        [StringLength(15)]
+        [StringLength(50)]
         public string Description { get; set; }
     }
 }

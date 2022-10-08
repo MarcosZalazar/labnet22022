@@ -1,0 +1,24 @@
+﻿@model TP4.MVC.Models.ShippersView
+
+@{
+    ViewBag.Title = "Shippers Page create and update";
+}
+
+<!DOCTYPE html>
+
+<h1>Vista de detalles</h1>
+
+@using (Html.BeginForm("Details", "Shippers", FormMethod.Post))
+{
+    <div>
+        <label>Id: </label><br>@Html.TextBoxFor(s => s.Id, new { @readonly = "readonly" })<br>
+    </div>
+    <div>
+
+        <label>Nombre de la compañia: </label> <br>@Html.TextBoxFor(s => s.CompanyName, new { @readonly = "readonly" })<br>
+    </div>
+    <div>
+        @Html.LabelFor(s => s.Phone)
+        <br>@Html.TextBoxFor(s => s.Phone, new { @readonly = "readonly" })<br>
+    </div>
+}
