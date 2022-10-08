@@ -29,81 +29,6 @@ namespace TP4.MVC.Controllers
             return View(categoriesViews);
         }
 
-        public ActionResult Insert()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Insert(CategoriesView categoriesView)
-        {
-            try
-            {
-                if (ModelState.IsValid) 
-                {
-                    Categories categoryEntity = new Categories
-                    {
-                        CategoryName = categoriesView.CategoryName,
-                        Description = categoriesView.Description
-                    };
-
-                    categoriesLogic.Add(categoryEntity);
-                    return RedirectToAction("Index");
-
-                }
-                return View(categoriesView);
-            }
-            catch (Exception) 
-            {
-                return RedirectToAction("Index", "Error");
-            }
-        }
-
-        public ActionResult Update(int id)
-        {
-            try
-            {
-                CategoriesLogic categoriesLogic = new CategoriesLogic();
-                var categoryEntity = categoriesLogic.GetOne(id);
-                CategoriesView categoriesViews = new CategoriesView()
-                {
-                    Id = categoryEntity.CategoryID, 
-                    CategoryName = categoryEntity.CategoryName,
-                    Description = categoryEntity.Description,
-                };
-
-                return View(categoriesViews);
-            }
-            catch (Exception)
-            {
-                return RedirectToAction("Index", "Error");
-            }
-        }
-
-        [HttpPost]
-        public ActionResult Update(CategoriesView categoriesView)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    Categories categoryEntity = new Categories
-                    {
-                        CategoryID = categoriesView.Id,
-                        CategoryName = categoriesView.CategoryName,
-                        Description = categoriesView.Description
-                    };
- 
-                    categoriesLogic.Update(categoryEntity);
-                }
-                return RedirectToAction("Index");
-            }
-            catch (Exception)
-            {
-                return RedirectToAction("Index", "Error");
-            }
-        }
-
         public ActionResult InsertUpdate(int id=0)
         {
             try
@@ -129,7 +54,11 @@ namespace TP4.MVC.Controllers
             }
             catch (Exception)
             {
-                return RedirectToAction("Index", "Error");
+                ErrorView error = new ErrorView()
+                {
+                    ErrorMessage = "No se pudo realizar la operación. Intente nuevamente"
+                };
+                return RedirectToAction("Index", "Error", error);
             }
         }
 
@@ -166,13 +95,17 @@ namespace TP4.MVC.Controllers
             }
             catch (Exception)
             {
-                return RedirectToAction("Index", "Error");
+                ErrorView error = new ErrorView()
+                {
+                    ErrorMessage = "No se pudo realizar la operación. Intente nuevamente"
+                };
+                return RedirectToAction("Index", "Error", error);
             }
         }
 
         public ActionResult Delete(int id)
         {
-            try 
+            try
             {
                 if (ModelState.IsValid)
                 {
@@ -180,9 +113,22 @@ namespace TP4.MVC.Controllers
                 }
                 return RedirectToAction("Index");
             }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                ErrorView error = new ErrorView()
+                {
+                    ErrorMessage = "No se puede eliminar el registro ya que es usado por la entidad 'Productos'." +
+                                   "Para eliminar el registro, elimine primero los productos relacionados"
+                };
+                return RedirectToAction("Index", "Error",error);
+            }
             catch (Exception)
             {
-                return RedirectToAction("Index", "Error");
+                ErrorView error = new ErrorView()
+                {
+                    ErrorMessage = "No se pudo eliminar la categóría. Intente nuevamente"
+                };
+                return RedirectToAction("Index", "Error",error);
             }
         }
 
@@ -202,7 +148,11 @@ namespace TP4.MVC.Controllers
             }
             catch (Exception)
             {
-                return RedirectToAction("Index", "Error");
+                ErrorView error = new ErrorView()
+                {
+                    ErrorMessage = "No se pudo mostrar los detalles. Intente nuevamente"
+                };
+                return RedirectToAction("Index", "Error", error);
             }
         }
     }

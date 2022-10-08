@@ -1,0 +1,15 @@
+﻿@model TP4.MVC.Models.ErrorView
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("Index", "Error", FormMethod.Post))
+{
+
+    <div>
+        @Model.ErrorMessage
+    </div>
+}
+
+
