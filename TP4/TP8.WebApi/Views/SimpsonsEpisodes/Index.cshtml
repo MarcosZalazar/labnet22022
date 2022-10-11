@@ -1,0 +1,26 @@
+﻿@model List<TP8.WebApi.Models.SimpsonsEpisodesView>
+
+@{
+    ViewBag.Title = "Simpsons episodes Page";
+}
+
+<h1>Listado de los episodios de "Los Simpsons"</h1>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Temporada</th>
+            <th scope="col">Episodio</th>
+            <th scope="col">Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var simpsons in Model)
+        {
+            <tr>
+                <td>@simpsons.Season</td>
+                <td>@simpsons.Episode</td>
+                <td>@simpsons.Name</td>
+            </tr>
+        }
+    </tbody>
+ </table>

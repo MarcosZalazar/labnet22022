@@ -34,8 +34,16 @@ namespace TP4.Logic
 
         public override void Add(Shippers newShipper)
         {
-            context.Shippers.Add(newShipper);
-            context.SaveChanges();
+            try
+            {
+                context.Shippers.Add(newShipper);
+                context.SaveChanges();
+            }
+            catch (Exception ex) 
+            {
+                RollBackChanges();
+                throw ex;
+            }
         }
 
         public override void Delete(int id)
@@ -46,7 +54,7 @@ namespace TP4.Logic
                 context.Shippers.Remove(shipperToDelete);
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Infrastructure.DbUpdateException ex) 
+            catch (Exception ex) 
             {
                 RollBackChanges();
                 throw ex;
@@ -55,10 +63,19 @@ namespace TP4.Logic
 
         public override void Update(Shippers existingShipper)
         {
-            var shipperToUpdate = this.GetOne(existingShipper.ShipperID);
-            shipperToUpdate.CompanyName = existingShipper.CompanyName;
-            shipperToUpdate.Phone = existingShipper.Phone;
-            context.SaveChanges();
+            try
+            {
+                var shipperToUpdate = this.GetOne(existingShipper.ShipperID);
+                shipperToUpdate.CompanyName = existingShipper.CompanyName;
+                shipperToUpdate.Phone = existingShipper.Phone;
+
+                context.SaveChanges();
+            }
+            catch (Exception ex) 
+            {
+                RollBackChanges();
+                throw ex;
+            }
         }
     }
 }

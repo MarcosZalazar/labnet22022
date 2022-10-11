@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4.Test", "T4.Test\T4.Test.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP4.MVC", "TP4.MVC\TP4.MVC.csproj", "{B419B7FF-8924-418D-80B0-A37A86C53F33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP8.WebApi", "TP8.WebApi\TP8.WebApi.csproj", "{54142AF4-080C-4C67-B84B-E7FE10970C00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP4.Service", "TP4.Service\TP4.Service.csproj", "{C168AD5A-7219-4F91-B31C-FB1A2F48DE0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{B419B7FF-8924-418D-80B0-A37A86C53F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B419B7FF-8924-418D-80B0-A37A86C53F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B419B7FF-8924-418D-80B0-A37A86C53F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54142AF4-080C-4C67-B84B-E7FE10970C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54142AF4-080C-4C67-B84B-E7FE10970C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54142AF4-080C-4C67-B84B-E7FE10970C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54142AF4-080C-4C67-B84B-E7FE10970C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C168AD5A-7219-4F91-B31C-FB1A2F48DE0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C168AD5A-7219-4F91-B31C-FB1A2F48DE0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C168AD5A-7219-4F91-B31C-FB1A2F48DE0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C168AD5A-7219-4F91-B31C-FB1A2F48DE0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

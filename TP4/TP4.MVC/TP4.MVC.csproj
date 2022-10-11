@@ -56,6 +56,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -207,6 +210,10 @@
     <ProjectReference Include="..\TP4.Logic\TP4.Logic.csproj">
       <Project>{097B4496-E47E-4046-94A8-3F2883E64240}</Project>
       <Name>TP4.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TP4.Service\TP4.Service.csproj">
+      <Project>{C168AD5A-7219-4F91-B31C-FB1A2F48DE0E}</Project>
+      <Name>TP4.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

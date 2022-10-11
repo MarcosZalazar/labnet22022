@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using TP4.Entities;
@@ -21,8 +24,16 @@ namespace TP4.Logic
 
         public override void Add(Categories newCategory)
         {
-            context.Categories.Add(newCategory);
-            context.SaveChanges();
+            try
+            {
+                context.Categories.Add(newCategory);
+                context.SaveChanges();
+            }
+            catch (Exception ex) 
+            {
+                RollBackChanges();
+                throw ex;
+            }
         }
 
         public override void Delete(int id)
@@ -33,7 +44,7 @@ namespace TP4.Logic
                 context.Categories.Remove(categoryToDelete);
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Infrastructure.DbUpdateException ex) 
+            catch (Exception ex) 
             {
                 RollBackChanges();
                 throw ex;
@@ -42,10 +53,20 @@ namespace TP4.Logic
 
         public override void Update(Categories existingCategory)
         {
-            var categoryToUpdate = this.GetOne(existingCategory.CategoryID);
-            categoryToUpdate.CategoryName = existingCategory.CategoryName;
-            categoryToUpdate.Description = existingCategory.Description;
-            context.SaveChanges();
+            try
+            {
+                var categoryToUpdate = this.GetOne(existingCategory.CategoryID);
+                categoryToUpdate.CategoryName = existingCategory.CategoryName;
+                categoryToUpdate.Description = existingCategory.Description;
+
+                context.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                RollBackChanges();
+                throw ex;
+            }
         }
     }
 }

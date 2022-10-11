@@ -1,10 +1,12 @@
 namespace TP4.Entities
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Runtime.Serialization;
     using System.Text;
 
     public partial class Shippers
@@ -26,6 +28,8 @@ namespace TP4.Entities
         public string Phone { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
+        [IgnoreDataMember]
         public virtual ICollection<Orders> Orders { get; set; }
 
         public override string ToString()

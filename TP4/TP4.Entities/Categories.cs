@@ -1,10 +1,12 @@
 namespace TP4.Entities
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Runtime.Serialization;
     using System.Text;
 
     public partial class Categories
@@ -29,6 +31,8 @@ namespace TP4.Entities
         public byte[] Picture { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
+        [IgnoreDataMember]
         public virtual ICollection<Products> Products { get; set; }
 
         public override string ToString()
