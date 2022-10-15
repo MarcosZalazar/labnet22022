@@ -9,7 +9,7 @@ import { Category } from '../models/category';
 })
 export class CategoriesService {
 
-  public endpoint: string='category';
+  public endpoint: string='categories';
 
   constructor(private http: HttpClient) { }
 

@@ -22,7 +22,7 @@ export class CategoriesComponent implements OnInit {
 
   initForm() {
     this.formCategories=this.FormBuild.group({
-      categoryName:['',[Validators.required,Validators.maxLength(15)]],
+      name:['',[Validators.required,Validators.maxLength(15)]],
       description:['',[Validators.required,Validators.maxLength(50)]]
     });
   }
@@ -34,8 +34,8 @@ export class CategoriesComponent implements OnInit {
 
   saveCategory(){
     var category=new Category();
-    category.categoryName=this.formCategories.get('name')!.value;
-    category.description=this.formCategories.get('description')!.value;
+    category.CategoryName=this.formCategories.get('name')?.value;
+    category.Description=this.formCategories.get('description')?.value;
 
     this.categoriesService.insertCategory(category).subscribe(res => {
       this.formCategories.reset();
