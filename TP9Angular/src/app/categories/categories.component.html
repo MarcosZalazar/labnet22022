@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row mt-3">
+        <form class="col-sm" [formGroup]="formCategories">
+            <h2>Formulario de categorias</h2>
+            <div class="form-group mt-2">   
+                <label for="categoryName" class="exampleFormContolInput1">Category name</label>
+                <input type="text" formControlName="categoryName" class="form-control" id="name" [ngClass]="{ 'is-invalid':f.name.touched && f.name.errors}" placeholder="Ingrese el nombre">
+                <div *ngIf="f.categoryName.touched && f.categoryName.errors" class="invalid-feedback">
+                    <div *ngIf="f.categoryName.errors.required"> La categoría es un campo requerido</div>
+                    <div *ngIf="f.categoryName.errors.maxlength"> La máximo es de 15 caracteres</div>
+                </div>
+            </div>
+            <div class="form-group mt-2">
+                <label for="description" class="exampleFormContolInput1">description</label>
+                <input type="text" formControlName="description" class="form-control" id="description" [ngClass]="{ 'is-invalid':f.description.touched && f.description.errors}" placeholder="Ingrese la descripción">
+                <div *ngIf="f.description.touched && f.description.errors" class="invalid-feedback">
+                    <div *ngIf="f.description.errors.required"> La categoría es un campo requerido</div>
+                    <div *ngIf="f.description.errors.maxlength"> La máximo es de 50 caracteres</div>
+                </div>
+            </div>
+            <div class="form-group mt-2 text-right">
+                <button type="reset" class="btn btn-secondary mb-2 mr-2" (click)="cancelCategory()">Cancelar</button>
+                <button type="submit" class="btn btn-primary mb-2" [disabled]="this.formCategories.invalid" (click)="saveCategory()">Guardar</button>
+            </div>
+        </form>
+        <div class="col">
+            <h2>List of categories</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Category Name</th>
+                        <th scope="col">Descrition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of categoriesList">
+                        <th scope="row">{{item.id}}</th>
+                        <td>{{item.categoryName}</td>
+                        <td>{{item.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
