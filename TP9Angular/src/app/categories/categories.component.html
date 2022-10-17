@@ -1,24 +1,30 @@
 <div class="container">
     <div class="row">
         <div class="md-4">
-            <h2>Formulario de categorias</h2>
+            <h2>Categories form</h2>
             <form [formGroup]="formCategories">
-                <div class="form-group">   
-                    <input class="form-control" type="text" formControlName="name" id="name" placeholder="Ingrese el nombre">
-                    <input class="form-control" type="text" formControlName="description"  id="description" placeholder="Ingrese la descripción">
+                <div class="form-group"(ngSubmit)="onSubmit()">  
+                    <input class="form-control" type="text" formControlName="Id" id="Id" [readonly]="true"><br>
+                    <input class="form-control" type="text" formControlName="CategoryName" id="CategoryName" [ngClass]="{'is-invalid':f.CategoryName.touched && f.CategoryName.errors}" placeholder="Insert the category name"><br>
+                    <div *ngIf="f.CategoryName.touched && f.CategoryName.errors" class="invalid-feedback">
+                        <div *ngIf="f.CategoryName.errors.required"> Category name is required</div>
+                        <div *ngIf="f.CategoryName.errors.maxlength"> Max length allowed:15 characters</div>
+                    </div>
+                    <input class="form-control" type="text" formControlName="Description"  id="Description" placeholder="Insert the description"><br>
                 </div> 
                 <button type="reset" class="btn btn-secondary" (click)="cancelCategory()">Cancelar</button>
                 <button type="submit" class="btn btn-primary" (click)="saveCategory()">Guardar</button>
             </form>
         </div>
         <div class="col">
-            <h2>List of categories</h2>
+            <h2><br>List of categories</h2>
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Category Name</th>
-                        <th scope="col">Descrition</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,6 +32,10 @@
                         <th scope="row">{{item.Id}}</th>
                         <td>{{item.CategoryName}}</td>
                         <td>{{item.Description}}</td>
+                        <td>
+                            <button type="button" class="btn btn-warning" (click)="updateCategory(item.Id)">Modificar</button>
+                            <button type="button" class="btn btn-danger" (click)="deleteCategory(item.Id)">Eliminar</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
